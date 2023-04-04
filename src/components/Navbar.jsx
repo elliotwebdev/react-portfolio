@@ -1,7 +1,8 @@
 import { Box, Flex, Spacer, HStack, useMediaQuery, 
   IconButton, useDisclosure, Icon } from "@chakra-ui/react";
 import NavLinks from "./NavLinks"
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { RxHamburgerMenu } from 'react-icons/rx'
+
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import SvgVite from "./svg/SvgVite";
 import SvgViteName from "./svg/SvgViteName";
@@ -26,7 +27,7 @@ export default function Navbar(){
   return (
     <Flex fontSize={[16, null, 22]} justify="center" position="fixed" mt={4} width="100%" zIndex="999">
       <HStack sx={NavbarStyle} width={{ base: "95%", sm: "75%", md: "55%" }}  >
-      <Link to="/" smooth={true} duration={1500}>
+      <Link to="/" as="a" href="https://elliotweb.dev" smooth={true} duration={1500}>
 			{isLargerThanPhone ? (
           <Icon as={SvgViteName} width="131" height="46"/>
 				) : (
@@ -41,7 +42,7 @@ export default function Navbar(){
           alignSelf="center"
           size="md"
           colorScheme='none'
-          icon={isOpen ?  <Icon as={AiOutlineCloseCircle} /> : <Icon as={GiHamburgerMenu} />}
+          icon={isOpen ?  <Icon as={AiOutlineCloseCircle} /> : <Icon as={RxHamburgerMenu} />}
           aria-label="Open Menu"
           display={{ md: "none" }}
           onClick={isOpen ? onClose : onOpen}

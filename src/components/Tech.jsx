@@ -72,7 +72,7 @@ const FilteredList = () => {
   const filteredData = filter === 'All' ? technologies : technologies.filter(item => item.option === filter);
 
   return (
-    <Box>
+    <Box >
       <Box textColor="white" >
         <Box height="1px"> </Box>
         <Box display="flex" justifyContent="center" mx={[6, 12 ,24]} mt={28}>
@@ -92,7 +92,7 @@ const FilteredList = () => {
 
     <Box bg="indigo" borderRadius={48} border="1px solid" borderColor="celest" my={12}>
     <VStack>
-      <Wrap my={6} spacing={4} justify="center" >
+      <Wrap my={6} px={2} spacing={2} justify="center" >
         <Button onClick={() => setFilter('All')}   
             bg={filter === 'All' ? 'sunglow' : 'pumpkin'}
             color={filter === 'All' ? 'black' : 'white'}
@@ -103,7 +103,7 @@ const FilteredList = () => {
             bg={filter === 'scripting' ? 'sunglow' : 'pumpkin'}
             color={filter === 'scripting' ? 'black' : 'white'}
             _hover={{ bg: 'sunglow', color: 'black' }}
-            variant={filter === 'scripting' ? 'solid' : 'outline'}>Scripting</Button>
+            variant={filter === 'scripting' ? 'solid' : 'outline'}>Programming</Button>
 
         <Button onClick={() => setFilter('frontend')}
             bg={filter === 'frontend' ? 'sunglow' : 'pumpkin'}
@@ -120,7 +120,7 @@ const FilteredList = () => {
       
       <Flex flexWrap="wrap" justifyContent="center">
         {filteredData.map((technology) => (
-          <Box key={technology.name} width={{ base: "50%", sm: "auto" }}>
+          <Box px={6} key={technology.name} width={{ base: "50%", sm: "auto" }}>
             <Tooltip placement='top' hasArrow arrowSize={15} label={technology.name} closeOnClick={false} bg='pumpkin' offset>
               <Box w={{ base: "100%", sm: "auto" }}><BallCanvas icon={technology.icon} /> </Box>
             </Tooltip>

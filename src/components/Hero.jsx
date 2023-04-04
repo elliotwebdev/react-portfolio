@@ -1,4 +1,4 @@
-import { Box, Flex, useMediaQuery, Text, useInterval, Image, Icon } from "@chakra-ui/react";
+import { Box, Flex, useMediaQuery, Text, useInterval, Image, Icon, Spinner } from "@chakra-ui/react";
 import React, { useState, Suspense } from "react";
 import { motion } from 'framer-motion';
 import { BiChevronDown } from 'react-icons/bi'
@@ -68,19 +68,15 @@ export default function Hero() {
 			<>
 			{isLargerThanPhone ? (
 				<Box height="100%"> 
-					<Suspense fallback={null} >		
+					<Suspense fallback={<Box pt="30rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size="xl" color='celest'/></Flex></Box>} >		
 						<Spline scene="https://prod.spline.design/VzWk4CiSMXUqsDCv/scene.splinecode" />
 					</Suspense>
 				</Box>
 				) : (
 				<Box  height="100%"> 
-					<Suspense fallback={null} >		
+					<Suspense fallback={<Box pt="15rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size='xl' color='celest'/></Flex></Box>} >		
 						<Spline scene="https://prod.spline.design/27M32db0G7wU3VFx/scene.splinecode" />
 					</Suspense>
-					<Box pos="absolute" zIndex="999" bgGradient='linear(to-r, green.200, pink.500)'>
-						
-
-					</Box>
 				</Box>
 				)}
 			</>

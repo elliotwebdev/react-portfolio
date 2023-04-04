@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardFooter, Image, Stack, Button, Text, Heading, Icon } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardFooter, Flex, Stack, Button, Text, Heading, Spinner } from "@chakra-ui/react";
 import React, { Suspense } from "react";
 import { AiFillGithub } from 'react-icons/ai'
 import { TbArrowUpRight} from 'react-icons/tb'
@@ -35,9 +35,9 @@ export default function Work() {
           borderRadius={48}
         > 
           <Box p={2} width={["100%", "200%"]} >
-            	
+            <Suspense fallback={<Box pt="2rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size="lg" color='pumpkin'/></Flex></Box>} >
               <Spline scene="https://prod.spline.design/ec5g7yc-Cszz77eI/scene.splinecode" />
-            
+            </Suspense>
           </Box>
 
           <Stack >
@@ -111,9 +111,9 @@ export default function Work() {
             </CardFooter>
           </Stack>
           <Box p={10} width={["100%", "200%"]}>
-           	
+            <Suspense fallback={<Box pt="2rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size="lg" color='pumpkin'/></Flex></Box>} >
               <Spline scene="https://prod.spline.design/DhMw750TDOOZ3Nrs/scene.splinecode" />
-            
+            </Suspense>
           </Box>
         </Card>
 

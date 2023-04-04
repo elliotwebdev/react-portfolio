@@ -39,7 +39,7 @@ const Ball = (props) => {
 export default function BallCanvas({ icon }) {
   return (
     <Canvas
-      width="200px"
+      width="100px"
       frameloop='demand'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}

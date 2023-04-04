@@ -11,15 +11,19 @@ import Contact from './pages/Contact'
 import Work from './pages/Work'
 import Skills from './pages/Skills'
 import Landing from './pages/Landing'
+import NotFound from './components/NotFound'
 
 // router and routes
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route index element={<Landing />} />
-      <Route path="work" element={<Work />} />
-      <Route path="skills" element={<Skills />} />
-      <Route path="contact" element={<Contact />}/>
+    <Route>
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Landing />} />
+        <Route path="work" element={<Work />} />
+        <Route path="skills" element={<Skills />} />
+        <Route path="contact" element={<Contact />}/>
+      </Route>
+      <Route path="*" element={<NotFound />}/>
     </Route>
   )
 )
