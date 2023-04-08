@@ -1,4 +1,7 @@
 import { Box, Flex, Image, Text, Heading, SimpleGrid } from "@chakra-ui/react";
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import { useAnimation, motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 
 const services = [
@@ -57,12 +60,29 @@ const ServiceCard = ({ title, icon}) => {
 }
 
 export default function SubHero(){
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1 },
+      });
+    }
+  }, [controls, inView]);
   
   return (
     <Box id="services">
       
     <Box textColor="white" >
         <Box height="1px"> </Box>
+        <motion.div
+          ref={ref}
+          initial={{ x: -100, opacity: 0.5 }}
+          animate={controls}
+        >
         <Box mx={[6, 12 ,24]} mt={28}>
           <Heading 
           pb="1rem"  
@@ -81,6 +101,7 @@ export default function SubHero(){
           pleasing website that achieves business goals.
           </Text>
         </Box>
+        </motion.div>
         
     </Box>
     <Box my={12} >

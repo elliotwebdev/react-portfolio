@@ -1,10 +1,25 @@
 import { Box, Text, Heading, SimpleGrid, Icon } from "@chakra-ui/react";
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import { useAnimation, AnimatePresence, motion } from 'framer-motion';
 import SvgRocket from "./svg/SvgRocket";
 import SvgAi from "./svg/SvgAi";
 import SvgContact from "./svg/SvgContact";
 
 export default function ContentCards () {
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1 },
+      });
+    }
+  }, [controls, inView]);
 
     window.onload = function(){
         document.getElementById("cards").onmousemove = e => {
@@ -28,12 +43,15 @@ export default function ContentCards () {
         }, 200);
     };
 
-    const location = useLocation();
-
   return (
     <Box >
       <Box id="header" textColor="white" >
         <Box height="1px"> </Box>
+        <motion.div
+          ref={ref}
+          initial={{ x: -100, opacity: 0.5 }}
+          animate={controls}
+        >
         <Box mx={[6, 12 ,24]} mt={28}>
           <Heading 
           pb="1rem"  
@@ -52,15 +70,20 @@ export default function ContentCards () {
           web technologies I have become skilled in utilizing.
           </Text>
         </Box>
+        </motion.div>
         
     </Box>
 
       <Box >
       <Box id="page" height={1}></Box>
+      
+      <AnimatePresence mode='wait'>
 
-      <Box mx={[6, 22 ,36]}  >
-        <Outlet />
-      </Box>
+        <Box mx={[6, 22 ,36]}  >
+          <Outlet />
+        </Box>
+
+      </AnimatePresence>
 
       <SimpleGrid onClick={handleClick} textColor="white"  id="cards"  columns={[1, null, 3]} mx={[6, 12 ,24]} spacing={4}>
 

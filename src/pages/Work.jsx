@@ -1,5 +1,6 @@
 import { Box, Card, CardBody, CardFooter, Flex, Stack, Button, Text, Heading, Spinner } from "@chakra-ui/react";
 import React, { Suspense } from "react";
+import { motion } from 'framer-motion';
 import { AiFillGithub } from 'react-icons/ai'
 import { TbArrowUpRight} from 'react-icons/tb'
 
@@ -7,6 +8,11 @@ const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 export default function Work() {
   return (
+    <motion.div
+    initial={{ y: -1000, opacity: 0 }}
+    animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+    exit={{ y: 1000, opacity: 0, transition: { duration: 1 } }}
+  >
     <Suspense fallback={null} >	
     <Box  textColor="white" >
         <Box height="1px"> </Box>
@@ -119,5 +125,6 @@ export default function Work() {
 
     </Stack>
     </Suspense>
+    </motion.div>
   )
 }
