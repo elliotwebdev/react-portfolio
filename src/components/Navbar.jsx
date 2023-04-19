@@ -27,7 +27,7 @@ export default function Navbar(){
   return (
     <Flex fontSize={[16, null, 22]} justify="center" position="fixed" mt={4} width="100%" zIndex="999">
       <HStack sx={NavbarStyle} width={{ base: "95%", sm: "75%", md: "55%" }}  >
-      <Link to="/" as="a" href="https://elliotweb.dev" smooth={true} duration={1500}>
+      <Link to="/" as="a" href="https://elliotweb.dev" aria-label="Elliot Web.Dev" smooth={true} duration={1500}>
 			{isLargerThanPhone ? (
           <Icon as={SvgViteName} width="131" height="46"/>
 				) : (

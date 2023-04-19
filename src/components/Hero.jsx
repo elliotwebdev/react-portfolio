@@ -1,5 +1,5 @@
-import { Box, Flex, useMediaQuery, Text, useInterval, Image, Icon, Spinner } from "@chakra-ui/react";
-import React, { useState, Suspense } from "react";
+import { Box, Flex, useMediaQuery, Text, Icon, Spinner } from "@chakra-ui/react";
+import React, { useState, useEffect, Suspense } from "react";
 import { motion } from 'framer-motion';
 import { BiChevronDown } from 'react-icons/bi'
 
@@ -7,36 +7,27 @@ const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 function actions(){
 	const [index_actions, setIndexActions] = useState(0);
-	const actionWords=[
-		{
-			word:"design",
-			gradient:"linear(to-l, #7928CA, #C92828)"
-		},
-		{
-			word:"build",
-			gradient:"linear(to-l, #00FFB4, #FFB400)"
-		},
-		{
-			word:"develop",
-			gradient:"linear(to-l, #FF0082, #0082FF)"
-		}
-	]
-	useInterval(() => {
-    	setIndexActions((index_actions + 1) % actionWords.length);
-  	}, 5000);
+	const actionWords = ["design","build","develop"]
+	useEffect(() => {
+		const interval = setInterval(() => {
+		  setIndexActions((index_actions + 1) % actionWords.length);
+		}, 5000);
+		
+		return () => clearInterval(interval);
+	  }, [index_actions]);
 
 	return (
-		<Flex fontSize={[24, null, 38]} gap={2}>
-			<Text>and I</Text>
+		<Flex fontSize={[24, null, 38]}>
+			<Text>and I&thinsp;</Text>
 			<motion.p
 				animate={{ y: [-8, 0, 8] , opacity: [0, 1, 0]}}
-				transition={{repeat: Infinity, duration: 5 }}
+				transition={{repeat: Infinity, duration: 5}}
 			>
 				<Text as="span"
-				bgGradient={actionWords[index_actions].gradient}
+				bgGradient="linear(to-r, sunglow, pumpkin)"
 				bgClip='text'
 				>
-					{actionWords[index_actions].word}
+					{actionWords[index_actions]}
 				</Text>
 			</motion.p>
 		</Flex>
@@ -64,7 +55,7 @@ export default function Hero() {
 	}
 
   	return (
-    	<Box id="/" pos="relative"  height={["90%", null, "100%"]}>
+    	<Box id="/" pos="relative"  height="100%">
 			<>
 			{isLargerThanPhone ? (
 				<Box height="100%"> 
@@ -82,7 +73,7 @@ export default function Hero() {
 			</>
 				
       		<Box sx={HeroStyle}>
-			  	<Text fontSize={[30, null, 56]}>Hello, I'm <Image py={[1, null, 2]} width={[32, null, 60]} src="./icons/logo.png"/></Text>
+			  	<Text fontSize={[26, null, 40]} as='b' >Hello, I'm Elliot</Text>
 				{actions()}
 				<Text fontSize={[24, null, 38]}>interactive web applications.</Text>
       		</Box>

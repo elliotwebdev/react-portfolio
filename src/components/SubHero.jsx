@@ -7,19 +7,19 @@ import Tilt from 'react-parallax-tilt';
 const services = [
   {
     title: "UX/UI Designer",
-    icon: "./icons/ux.png"
+    icon: "./src/components/svg/ux.svg"
   },
   {
     title: "Web Developer",
-    icon: "./icons/dev.png"
+    icon: "./src/components/svg/develop.svg"
   },
   {
     title: "Project Manager",
-    icon: "./icons/manage.png"
+    icon: "./src/components/svg/project.svg"
   },
   {
     title: "3D Modeler",
-    icon: "./icons/3D.png"
+    icon: "./src/components/svg/3d.svg"
   }
 ]
 
@@ -60,18 +60,18 @@ const ServiceCard = ({ title, icon}) => {
 }
 
 export default function SubHero(){
-  const controls = useAnimation();
+  const controlsHeading = useAnimation();
   const { ref, inView } = useInView();
 
   useEffect(() => {
     if (inView) {
-      controls.start({
+      controlsHeading.start({
         x: 0,
         opacity: 1,
         transition: { duration: 1 },
       });
     }
-  }, [controls, inView]);
+  }, [controlsHeading, inView]);
   
   return (
     <Box id="services">
@@ -80,8 +80,8 @@ export default function SubHero(){
         <Box height="1px"> </Box>
         <motion.div
           ref={ref}
-          initial={{ x: -100, opacity: 0.5 }}
-          animate={controls}
+          initial={{ x: -100, opacity: 0 }}
+          animate={controlsHeading}
         >
         <Box mx={[6, 12 ,24]} mt={28}>
           <Heading 
@@ -108,13 +108,11 @@ export default function SubHero(){
       <SimpleGrid columns={[2, null, 4]} spacing={[4, 6, 8]} mx={[6, 12 ,24]} >
         
           {services.map((service, index) => (
-      
               <ServiceCard key={service.title} index={index} {...service} />
-         
-          ))}
+            ))}
        
       </SimpleGrid>
-    </Box>
+      </Box>
     </Box>
   )
 }
