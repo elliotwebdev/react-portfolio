@@ -7,19 +7,19 @@ import Tilt from 'react-parallax-tilt';
 const services = [
   {
     title: "UX/UI Designer",
-    icon: "./src/components/svg/ux.svg"
+    icon: "/icons/ux.png"
   },
   {
     title: "Web Developer",
-    icon: "./src/components/svg/develop.svg"
+    icon: "/icons/dev.png"
   },
   {
     title: "Project Manager",
-    icon: "./src/components/svg/project.svg"
+    icon: "/icons/manage.png"
   },
   {
     title: "3D Modeler",
-    icon: "./src/components/svg/3d.svg"
+    icon: "/icons/3D.png"
   }
 ]
 
