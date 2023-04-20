@@ -50,7 +50,7 @@ export default function Hero() {
 	const HeroStyle = {
 		pos: "absolute",
 		bottom: "8rem",
-		left: ["1rem", "3rem"],
+		left: "2rem",
 		textColor: "white",
 	}
 
@@ -78,7 +78,7 @@ export default function Hero() {
 				<Text fontSize={[24, null, 38]}>interactive web applications.</Text>
       		</Box>
 
-			<Box position="absolute" bottom={{ base: "8", md: "12" }} width="full" display="flex" justifyContent="center" alignItems="center">
+			<Box position="absolute" bottom={{ base: "10", md: "20" }} width="full" display="flex" justifyContent="center" alignItems="center">
 				
 				<Box onClick={handleClick} cursor="pointer" width="35px" height="64px" borderColor="pumpkin" borderRadius="3xl" borderWidth="4px" display="flex" justifyContent="center" alignItems="start" p="2">
 					<motion.div 
