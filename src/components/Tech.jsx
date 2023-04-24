@@ -109,19 +109,19 @@ const FilteredList = () => {
             bg={filter === 'frontend' ? 'sunglow' : 'pumpkin'}
             color={filter === 'frontend' ? 'black' : 'white'}
             _hover={{ bg: 'sunglow', color: 'black' }}
-            variant={filter === 'frontend' ? 'solid' : 'outline'}>FrontEnd Tools</Button>
+            variant={filter === 'frontend' ? 'solid' : 'outline'}>Frameworks & Libraries</Button>
 
         <Button onClick={() => setFilter('design')}
             bg={filter === 'design' ? 'sunglow' : 'pumpkin'}
             color={filter === 'design' ? 'black' : 'white'}
             _hover={{ bg: 'sunglow', color: 'black' }}
-            variant={filter === 'design' ? 'solid' : 'outline'}>Design</Button>
+            variant={filter === 'design' ? 'solid' : 'outline'}>Design Tools</Button>
       </Wrap>
       
       <Flex flexWrap="wrap" justifyContent="center">
         {filteredData.map((technology) => (
           <Box px={6} key={technology.name} width={{ base: "50%", sm: "auto" }}>
-            <Tooltip placement='top' hasArrow arrowSize={15} label={technology.name} closeOnClick={false} bg='pumpkin' offset>
+            <Tooltip placement='top' hasArrow arrowSize={15} label={technology.name} closeOnClick={false} bg='sunglow' textColor="black" offset>
               <Box w={{ base: "100%", sm: "auto" }}><BallCanvas icon={technology.icon} /> </Box>
             </Tooltip>
           </Box>

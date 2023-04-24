@@ -27,7 +27,7 @@ const ServiceCard = ({ title, icon}) => {
 
   return(
     <Tilt>
-      <Box bg="indigo" textColor="white" pos="relative" borderRadius={12} height={[44, 52 , 72]} 
+      <Box bg="indigo" textColor="white" pos="relative" borderRadius={12} height={[44, 52, null, null, 64]} 
 
       _before={{
         content: "''",
@@ -44,14 +44,14 @@ const ServiceCard = ({ title, icon}) => {
         zIndex:"-1"}}>
         <Flex alignItems="center" justifyContent="center" >
           <Image 
-            boxSize={[32, 40 , 52]}
+            boxSize={[32, 36, null, null, 48]}
             objectFit='fit'
             src={icon}
             alt={title}
           />
         </Flex>
         <Flex justifyContent="center">
-          <Text fontSize={[16, 20, 24]}>{title}</Text>
+          <Text fontSize={[14, 18, null, null, 26]}>{title}</Text>
         </Flex>
       </Box>
     </Tilt>
@@ -105,7 +105,7 @@ export default function SubHero(){
         
     </Box>
     <Box my={12} >
-      <SimpleGrid columns={[2, null, 4]} spacing={[4, 6, 8]} mx={[6, 12 ,24]} >
+      <SimpleGrid columns={[2, null, 4]} spacing={[4, 6, 8]} mx={[6, 12, 24, 40]} >
         
           {services.map((service, index) => (
               <ServiceCard key={service.title} index={index} {...service} />

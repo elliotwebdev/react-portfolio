@@ -11,15 +11,6 @@ export default function Contact() {
     formState: { errors, isSubmitting },
   } = useForm()
 
-  // function onSubmit(values) {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       alert(JSON.stringify(values, null, 2))
-  //       resolve()
-  //     }, 3000)
-  //   })
-  // }
-
   return (
     <motion.div
     initial={{ y: -1000, opacity: 0 }}
@@ -43,14 +34,15 @@ export default function Contact() {
             }}> Get In Touch </Heading>
         </Box>
     </Box>
-    <Box my={12} mx={[1, 6, 24,]} bg="indigo" borderRadius={48} border="1px solid" borderColor="celest" p={[8, 10, 12]}>
-        <form  method="POST" action="https://formsubmit.co/92cb9ddf59f1e62ddc366d8322abea72" style={{ color: 'white' }} >
+    <Box my={12} mx={[1, 8, 30, null , 60]} bg="indigo" borderRadius={48} border="1px solid" borderColor="celest" p={[8, 10, 12]}>
+        <form method="POST" action="https://formsubmit.co/92cb9ddf59f1e62ddc366d8322abea72" style={{ color: 'white' }} >
           <FormControl mb={6} isInvalid={errors.name}>
             <FormLabel htmlFor='name'></FormLabel>
             <Input
               type="name"
               id='name'
               placeholder='Name'
+              style={{ fontSize: "1.2em" }}
               {...register('name', {
                 required: 'This is required'
               })}
@@ -65,6 +57,7 @@ export default function Contact() {
               type="email"
               id='email'
               placeholder='Email'
+              style={{ fontSize: "1.2em" }}
               {...register('email', {
                 required: 'This is required',
                 pattern: {
@@ -82,6 +75,7 @@ export default function Contact() {
             <Textarea
               id='message'
               placeholder='Message'
+              style={{ fontSize: "1.2em" }}
               {...register('message', {
                 required: 'This is required',
                 minLength: { value: 4, message: 'Minimum length should be 10' },

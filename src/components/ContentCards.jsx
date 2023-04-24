@@ -79,13 +79,13 @@ export default function ContentCards () {
       
       <AnimatePresence mode='wait'>
 
-        <Box mx={[6, 22 ,36]}  >
+        <Box mx={[6, 22 , 36, null, null, 80]}  >
           <Outlet />
         </Box>
 
       </AnimatePresence>
 
-      <SimpleGrid onClick={handleClick} textColor="white"  id="cards"  columns={[1, null, 3]} mx={[6, 12 ,24]} spacing={4}>
+      <SimpleGrid onClick={handleClick} textColor="white"  id="cards"  columns={[1, null, 3]} mx={[6, 12 , 22, null, null, 60]} spacing={4}>
 
         <Link to="work">
             <Box display="flex" alignItems="center" className="card" height={[48, null , 80]}>

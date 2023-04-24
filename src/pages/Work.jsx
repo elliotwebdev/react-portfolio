@@ -46,11 +46,11 @@ export default function Work() {
             </Suspense>
           </Box>
 
-          <Stack >
-            <CardBody textAlign="center">
+          <Stack mx={[1, 4, 8]}>
+            <CardBody textAlign={["center", null, null, "left"]}>
               <Heading size={["xl", "2xl"]} color="pumpkin">Trailer & Digital Editor</Heading>
 
-              <Text fontSize={[16, 20, 22 ]} pt={10}>
+              <Text fontSize={[16, 20, 22 ]} pt={[4, null, 10]}>
               Derek Henriquez is an accomplished media entertainment editor and works in groundbreaking 
               television series and movies. Experienced in multiple genres and various production companies, 
               this site showcases the best of his work.
@@ -91,11 +91,11 @@ export default function Work() {
           textColor="white"
           borderRadius={48}
         >
-          <Stack >
-            <CardBody textAlign="center">
-              <Heading size={["xl", "2xl"]} color="pumpkin">Refrigeration Gaskets of Texas, INC</Heading>
+          <Stack mx={[1, 4, 8]}>
+            <CardBody textAlign={["center", null, null, "left"]}>
+              <Heading size={["xl", "2xl"]} color="pumpkin">Refrigeration Gaskets of Texas, INC.</Heading>
 
-              <Text fontSize={[16, 20, 22 ]} pt={10}>
+              <Text fontSize={[16, 20, 22 ]} pt={[4, null, 10]}>
               RGT is a Houston based refrigeration goods manufacturer. The company 
               specializes in custom made gaskets, doors, and refrigeration boxes. 
               With an online store presence, the company is now ahead of their 
@@ -116,7 +116,7 @@ export default function Work() {
               </Button>
             </CardFooter>
           </Stack>
-          <Box p={10} width={["100%", "200%"]}>
+          <Box p={[2,10]} width={["100%", "200%"]}>
             <Suspense fallback={<Box pt="2rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size="lg" color='pumpkin'/></Flex></Box>} >
               <Spline scene="https://prod.spline.design/DhMw750TDOOZ3Nrs/scene.splinecode" />
             </Suspense>
