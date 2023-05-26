@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardFooter, Flex, Stack, Button, Text, Heading, Spinner } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardFooter, Flex, Stack, Button, Text, Heading, Spinner, Image} from "@chakra-ui/react";
 import React, { Suspense } from "react";
 import { motion } from 'framer-motion';
 import { AiFillGithub } from 'react-icons/ai'
@@ -31,6 +31,59 @@ export default function Work() {
         </Box>
     </Box>
     <Stack py={12} gap={4}>
+
+        <Card
+          direction={{ base: 'column', sm: 'row' }}
+          overflow='hidden'
+          variant='outline'
+          bg="indigo"
+          borderColor="celest"
+          textColor="white"
+          borderRadius={48}
+        >
+          <Stack mx={[1, 4, 8]}>
+            <CardBody textAlign={["center", null, null, "left"]}>
+              <Heading size={["xl", "2xl"]} color="pumpkin">Renzo Gracie Events Calendar</Heading>
+
+              <Text fontSize={[16, 20, 22 ]} pt={[4, null, 10]}>
+              Discover the ultimate calendar application through Renzo Events! Streamline your training with ease as you explore a network of distinguished
+              Renzo Gracie affiliate academies, offering diverse jiu jitsu and auxiliary fitness classes. With an intuitive interface; effortlessly 
+              browse schedules, set personalized training plans, and stay motivated to train.
+              </Text>
+            </CardBody>
+
+            <CardFooter gap={2} justifyContent="center">
+              <Button as="a" variant='solid' bg="pumpkin" textColor='white' 
+                fontSize={[12, 16, 20 ]} 
+                href="https://renzo.events/"
+                rightIcon={<TbArrowUpRight/>}
+                _hover={{
+                  bg:"sunglow",
+                  color:"black"
+                }}>
+                Visit Website
+              </Button>
+              <Button as="a" variant='solid' bg="pumpkin" 
+                fontSize={[12, 16, 20 ]} 
+                href="https://github.com/141Wonders/renzo-events"
+                rightIcon={<AiFillGithub/>}
+                _hover={{
+                  bg:"sunglow",
+                  color:"black"
+                }}>
+                View Source
+              </Button>
+            </CardFooter>
+          </Stack>
+          <Box px={[4,6]} pb={[8,0]} display="flex" >
+            <Suspense fallback={<Box pt="2rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size="lg" color='pumpkin'/></Flex></Box>} >
+                <Box display="flex" justifyContent="center" alignItems="center" >
+                  <Image border="2px" borderRadius="md" borderColor="celest"  src="renzo_events.jpg" alt='renzo events calendar' />
+                </Box>
+            </Suspense>
+          </Box>
+        </Card>
+
         <Card
           direction={{ base: 'column', sm: 'row' }}
           overflow='hidden'
@@ -51,9 +104,9 @@ export default function Work() {
               <Heading size={["xl", "2xl"]} color="pumpkin">Trailer & Digital Editor</Heading>
 
               <Text fontSize={[16, 20, 22 ]} pt={[4, null, 10]}>
-              Derek Henriquez is an accomplished media entertainment editor and works in groundbreaking 
-              television series and movies. Experienced in multiple genres and various production companies, 
-              this site showcases the best of his work.
+              Derek Henriquez, a highly skilled media entertainment editor, has an impressive portfolio of groundbreaking television series and movies. 
+              With expertise spanning across multiple genres and collaborations with various production companies, this website presents a curated selection 
+              of his finest works. With a reputation for delivering captivating and visually stunning content, his work continues to captivate audiences worldwide.
               </Text>
             </CardBody>
 
@@ -92,14 +145,15 @@ export default function Work() {
           borderRadius={48}
         >
           <Stack mx={[1, 4, 8]}>
-            <CardBody textAlign={["center", null, null, "left"]}>
+            <CardBody  textAlign={["center", null, null, "left"]}>
               <Heading size={["xl", "2xl"]} color="pumpkin">Refrigeration Gaskets of Texas, INC.</Heading>
 
               <Text fontSize={[16, 20, 22 ]} pt={[4, null, 10]}>
-              RGT is a Houston based refrigeration goods manufacturer. The company 
-              specializes in custom made gaskets, doors, and refrigeration boxes. 
-              With an online store presence, the company is now ahead of their 
-              competitors across state lines.
+              A Houston-based manufacturer of refrigeration goods, stands out 
+              in the industry with its specialization in crafting custom-made gaskets, 
+              doors, and refrigeration boxes. Through the establishment of an online store, 
+              the company has gained a competitive edge over its rivals, extending its 
+              reach beyond state lines. 
               </Text>
             </CardBody>
 
@@ -118,7 +172,7 @@ export default function Work() {
           </Stack>
           <Box p={[2,10]} width={["100%", "200%"]}>
             <Suspense fallback={<Box pt="2rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size="lg" color='pumpkin'/></Flex></Box>} >
-              <Spline scene="https://prod.spline.design/DhMw750TDOOZ3Nrs/scene.splinecode" />
+              <Spline scene="https://prod.spline.design/3pGu4TryZYwCCriU/scene.splinecode" />
             </Suspense>
           </Box>
         </Card>
