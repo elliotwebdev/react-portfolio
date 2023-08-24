@@ -44,7 +44,6 @@ export default function Hero() {
 			});
 		},0);
 	};
-	const [isLargerThanPhone] = useMediaQuery("(min-width: 480px)");
 
 	const HeroStyle = {
 		pos: "absolute",
@@ -55,21 +54,12 @@ export default function Hero() {
 
   	return (
     	<Box id="/" pos="relative" height="100%">
-			<>
-			{isLargerThanPhone ? (
-				<Box borderRadius={12} height="100%"> 
-					<Suspense fallback={<Box pt="30rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size="xl" color='celest'/></Flex></Box>} >		
-						<Spline scene="https://prod.spline.design/VzWk4CiSMXUqsDCv/scene.splinecode" borderRadius={12}/>
-					</Suspense>
-				</Box>
-				) : (
-				<Box  height="100%"> 
-					<Suspense fallback={<Box pt="15rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size='xl' color='celest'/></Flex></Box>} >		
-						<Spline scene="https://prod.spline.design/27M32db0G7wU3VFx/scene.splinecode" />
-					</Suspense>
-				</Box>
-				)}
-			</>
+			
+			<Box borderRadius={12} height="100%"> 
+				<Suspense fallback={<Box pt={["15rem", "30rem"]} ><Flex alignContent="center" justifyContent="center"><Spinner  size="xl" color='celest'/></Flex></Box>} >		
+					<Spline scene="https://prod.spline.design/VzWk4CiSMXUqsDCv/scene.splinecode"/>
+				</Suspense>
+			</Box>
 				
       		<Box sx={HeroStyle}>
 			  	<Text fontSize={[26, null, 40]}>Hello, I'm Elliot</Text>
