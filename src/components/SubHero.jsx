@@ -83,7 +83,7 @@ export default function SubHero(){
           initial={{ x: -100, opacity: 0 }}
           animate={controlsHeading}
         >
-        <Box mx={[6, 12 ,24]} mt={28}>
+        <Box mx={[6, 12 ,24]} mt={14}>
           <Heading 
           pb="1rem"  
           _before={{

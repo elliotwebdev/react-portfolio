@@ -123,7 +123,7 @@ export default function Work() {
               </Button>
               <Button as="a" variant='solid' bg="pumpkin" 
                 fontSize={[12, 16, 20 ]} 
-                href="https://github.com/141Wonders/vimeoalbum-portfolio"
+                href="https://github.com/elliotwebdev/vimeo-album-flask"
                 rightIcon={<AiFillGithub/>}
                 _hover={{
                   bg:"sunglow",

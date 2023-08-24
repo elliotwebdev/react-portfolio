@@ -10,38 +10,18 @@ const technologies = [
     option: "scripting"
   },
   {
+    name: "TypeScript",
+    icon: "./tech/typescript.png",
+    option: "scripting"
+  },
+  {
     name: "Vue",
     icon: "./tech/vue.png",
     option: "frontend"
   },
   {
-    name: "React JS",
+    name: "React",
     icon: "./tech/reactjs.png",
-    option: "frontend"
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "./tech/tailwind.png",
-    option: "frontend"
-  },
-  {
-    name: "Chakra UI",
-    icon: "./tech/chakra.png",
-    option: "frontend"
-  },
-  {
-    name: "Bootstrap",
-    icon: "./tech/bootstrap.png",
-    option: "frontend"
-  },
-  {
-    name: "Framer Motion",
-    icon: "./tech/framermotion.png",
-    option: "frontend"
-  },
-  {
-    name: "Three JS",
-    icon: "./tech/threejs.png",
     option: "frontend"
   },
   {

@@ -52,7 +52,7 @@ export default function ContentCards () {
           initial={{ x: -100, opacity: 0.5 }}
           animate={controls}
         >
-        <Box mx={[6, 12 ,24]} mt={28}>
+        <Box mx={[6, 12 ,24]} mt={14}>
           <Heading 
           pb="1rem"  
           _before={{

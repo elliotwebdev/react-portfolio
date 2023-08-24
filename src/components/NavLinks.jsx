@@ -79,7 +79,7 @@ export default function NavLinks() {
             </MenuItem>
           </ExtLink>
 
-          <ExtLink href='https://github.com/141Wonders' isExternal>
+          <ExtLink href='https://github.com/elliotwebdev' isExternal>
             <MenuItem sx={MenuStyle} icon={<Icon as={AiFillGithub} />} command={<Icon as={TbArrowUpRight}/>}>
               <Text fontFamily="Syne">GitHub</Text>
             </MenuItem>

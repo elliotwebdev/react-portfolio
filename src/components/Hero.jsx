@@ -1,9 +1,8 @@
 import { Box, Flex, useMediaQuery, Text, Icon, Spinner } from "@chakra-ui/react";
 import React, { useState, useEffect, Suspense } from "react";
+import Spline from '@splinetool/react-spline';
 import { motion } from 'framer-motion';
 import { BiChevronDown } from 'react-icons/bi'
-
-const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 function actions(){
 	const [index_actions, setIndexActions] = useState(0);
@@ -55,12 +54,12 @@ export default function Hero() {
 	}
 
   	return (
-    	<Box id="/" pos="relative"  height="100%">
+    	<Box id="/" pos="relative" height="100%">
 			<>
 			{isLargerThanPhone ? (
-				<Box height="100%"> 
+				<Box borderRadius={12} height="100%"> 
 					<Suspense fallback={<Box pt="30rem" ><Flex alignContent="center" justifyContent="center"><Spinner  size="xl" color='celest'/></Flex></Box>} >		
-						<Spline scene="https://prod.spline.design/VzWk4CiSMXUqsDCv/scene.splinecode" />
+						<Spline scene="https://prod.spline.design/VzWk4CiSMXUqsDCv/scene.splinecode" borderRadius={12}/>
 					</Suspense>
 				</Box>
 				) : (
@@ -73,7 +72,7 @@ export default function Hero() {
 			</>
 				
       		<Box sx={HeroStyle}>
-			  	<Text fontSize={[26, null, 40]} as='b' >Hello, I'm Elliot</Text>
+			  	<Text fontSize={[26, null, 40]}>Hello, I'm Elliot</Text>
 				{actions()}
 				<Text fontSize={[24, null, 38]}>interactive web applications.</Text>
       		</Box>
